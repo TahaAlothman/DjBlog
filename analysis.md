@@ -2,10 +2,13 @@
 Posts:
     - title
     - content
+    - publish date
+
+    
     - author
     - image
     - tags
-    - publish date
+    
 
 
 
