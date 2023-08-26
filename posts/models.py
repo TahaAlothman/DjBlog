@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
+from django.utils import timezone
 
 
 '''
@@ -20,3 +21,10 @@ class Post(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    
+
+class Comment(models.Model):
+    author =  models.ForeignKey(User,related_name='comment_author',on_delete=models.CASCADE)
+    post =   models.ForeignKey(Post,related_name='comment_post',on_delete=models.CASCADE)
+    comment = models.TextField(max_length=500)
+    create_date = models.DateTimeField(default=timezone.now)
