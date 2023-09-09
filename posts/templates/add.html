@@ -1,3 +1,11 @@
 <h1> Add New Post </h1>
 
-{{form}}
+
+<form  method="post" enctype="multipart/form-data">
+    {% csrf_token  %}
+    {{form}}
+    <input type="submit" value="add New Post">
+
+</form>
+
+
