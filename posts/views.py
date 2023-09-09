@@ -28,3 +28,13 @@ def add_post(request):
     else:
         form= PostForm()
     return render(request,'add.html',{'form':form})
+
+def edit_post(request,post_id):
+    data=Post.objects.get(id=post_id)
+    if request.method == 'POST':
+        form = PostForm(request.POST,request.FILES,instance=data)
+        if form.is_valid():
+            form.save()
+    else:
+        form= PostForm(instance=data)
+    return render(request,'edit.html',{'form':form})
