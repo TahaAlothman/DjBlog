@@ -19,3 +19,13 @@ context: post, object
 
 class Postdetail(generic.DetailView):
     model = Post
+
+
+'''
+templates:post_form.html
+'''
+
+class Postcreate(generic.CreateView):
+    model = Post
+    fields = '__all__'
+    success_url='/blog/'
