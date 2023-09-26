@@ -29,3 +29,11 @@ class Postcreate(generic.CreateView):
     model = Post
     fields = '__all__'
     success_url='/blog/'
+
+
+
+class Postupdate(generic.UpdateView):
+    model = Post
+    fields = '__all__'
+    template_name = 'posts/edit.html/'
+    success_url='/blog/'
