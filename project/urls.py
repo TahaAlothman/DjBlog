@@ -24,9 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/',Postlist.as_view()),
     path('blog/add', Postcreate.as_view()),
-    path('blog/<int:pk>',Postdetail.as_view()),
-    path('blog/<int:pk>/edit',Postupdate.as_view()),
-    path('blog/<int:pk>/delete',Postdelete.as_view()),
+    path('blog/<slug:slug>',Postdetail.as_view()),
+    path('blog/<slug:slug>/edit',Postupdate.as_view()),
+    path('blog/<slug:slug>/delete',Postdelete.as_view()),
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

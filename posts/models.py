@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.utils import timezone
-
+from django.utils.text import slugify
 
 '''
     - html widget
@@ -18,9 +18,14 @@ class Post(models.Model):
     publish_date = models.DateTimeField(default=timezone.now)
     tags = TaggableManager()
     imag=models.ImageField(upload_to='posts',null=True)
+    slug = models.SlugField(null=True,blank=True)
 
     def __str__(self) -> str:
         return self.title
+    
+    def save(self, *args, **kwargs):
+       self.slug = slugify (self.title)
+       super(Post, self).save(*args, **kwargs) # Call the real save() method
     
 
 class Comment(models.Model):
