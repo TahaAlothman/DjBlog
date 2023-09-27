@@ -1,7 +1,16 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import Post , Comment
+from django_summernote.admin import SummernoteModelAdmin
 
-admin.site.register(Post)
+
+
+
+class PostAdmin(SummernoteModelAdmin):
+    list_display = ['title',"publish_date", "author"]
+    summernote_fields = '__all__'
+
+
+
+
+admin.site.register(Post,PostAdmin)
 admin.site.register(Comment)
