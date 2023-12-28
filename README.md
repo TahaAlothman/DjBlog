@@ -17,3 +17,7 @@ To edit an existing blog post, click on the "Edit" button next to the post.
 To delete a blog post, click on the "Delete" button next to the post.
 You can also add tags to your blog posts using the provided tagging functionality.
 The Summernote editor allows you to format your blog post content with rich text features.
+
+# Acknowledgments
+This project was inspired by the need for a simple and customizable Django blog.
+Special thanks to the contributors who have helped improve and maintain this project.
