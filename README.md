@@ -9,3 +9,9 @@ Bootstrap 4 integration for a responsive and modern design
 Python 3 compatibility
 Integration with Summernote editor for rich text editing
 Tagging functionality using Django Taggit
+
+
+# Installation
+1.Clone the repository:
+
+git clone https://github.com/TahaAlothman/DjBlog.git
