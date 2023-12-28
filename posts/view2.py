@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Post
+from .models import Post, Comment
 
 
 '''
@@ -19,7 +19,10 @@ context: post, object
 
 class Postdetail(generic.DetailView):
     model = Post
-
+    def get_context_data(self, **kwargs) :
+        context = super().get_context_data(**kwargs)
+        context['comment'] = Comment.objects.filter(post = self.get_object())
+        return context
 
 '''
 templates:post_form.html
