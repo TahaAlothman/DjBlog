@@ -11,7 +11,9 @@ Integration with Summernote editor for rich text editing
 Tagging functionality using Django Taggit
 
 
-# Installation
-1.Clone the repository:
-
-git clone https://github.com/TahaAlothman/DjBlog.git
+# Usage
+To create a new blog post, click on the "New Post" button and fill in the required details.
+To edit an existing blog post, click on the "Edit" button next to the post.
+To delete a blog post, click on the "Delete" button next to the post.
+You can also add tags to your blog posts using the provided tagging functionality.
+The Summernote editor allows you to format your blog post content with rich text features.
